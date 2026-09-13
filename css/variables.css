@@ -1,0 +1,74 @@
+/* ==========================================================================
+   VARIABLES.CSS — Paleta, tipografía y tokens de diseño
+   Paleta derivada de los 3 colores base y sus escalas de matiz:
+   #5a62ac (violeta-azulado) · #41418b (índigo) · #e04f3a (coral)
+   ========================================================================== */
+
+:root {
+  /* --- Color: superficies y texto --- */
+  --color-bg: #eceefa;
+  --color-surface: #ffffff;
+  --color-surface-tint: #e9e9f1;
+  --color-line: #d2d4e4;
+  --color-ink: #1d1e2b;
+  --color-ink-soft: #4b4d63;
+
+  /* --- Color: paneles de sección (alternados, protagonismo del color) --- */
+  --color-panel-primary: #e2e4f6;
+  --color-panel-accent: #fbe4de;
+
+  /* --- Color: primario (violeta-azulado) --- */
+  --color-primary: #5a62ac;
+  --color-primary-dark: #41418b;
+  --color-primary-deep: #292947;
+
+  /* --- Franja oscura fija: header, nav, footer, tabla ---
+     No cambia con el tema: ancla visual constante del sitio */
+  --color-band: #292947;
+
+  /* --- Color: acento (coral) --- */
+  --color-accent: #e04f3a;
+  --color-accent-dark: #a8311e;
+  --color-accent-deep: #572219;
+  --color-accent-tint: #f6e2de;
+
+  /* --- Tipografía --- */
+  --font-display: "Cinzel", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  /* --- Escala de espaciado --- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+
+  /* --- Otros --- */
+  --radius-sm: 6px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 16px 32px -20px rgba(29, 30, 43, 0.45);
+  --content-max: 880px;
+  --border-hairline: 1px solid var(--color-line);
+}
+
+/* ==========================================================================
+   TEMA OSCURO — activado con el botón de tema (JS agrega data-theme="dark"
+   al <html>). Header, nav, footer y tabla usan --color-band, que es fijo
+   y no aparece aquí: por eso se mantienen igual en ambos temas.
+   ========================================================================== */
+:root[data-theme="dark"] {
+  --color-bg: #13141f;
+  --color-surface: #1b1c2f;
+  --color-surface-tint: #262842;
+  --color-panel-primary: #21233a;
+  --color-panel-accent: #2e1f1c;
+  --color-line: #383a58;
+  --color-ink: #eef0fb;
+  --color-ink-soft: #b7b9d6;
+
+  /* Estos dos se usan como TEXTO (títulos, links, tags), por eso se
+     aclaran en oscuro; en claro son violeta oscuro sobre fondo claro,
+     en oscuro pasan a violeta claro sobre fondo oscuro */
+  --color-primary-dark: #aeb2e8;
+  --color-primary-deep: #c7caf0;
+}

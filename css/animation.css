@@ -1,0 +1,109 @@
+/* ==========================================================================
+   ANIMATION.CSS — Transiciones e interactividad
+   El único JavaScript del proyecto vive en js/main.js y solo alterna el
+   atributo data-theme y valida el formulario; todo el MOVIMIENTO sigue
+   siendo CSS puro (transitions y keyframes).
+   ========================================================================== */
+
+/* --- Cambio de tema: transición de color suave, no golpe seco --- */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  header,
+  nav,
+  section,
+  footer,
+  table,
+  thead th,
+  tbody td,
+  .tags li,
+  #Contacto input,
+  #Contacto textarea {
+    transition: background-color 0.35s ease, color 0.35s ease,
+      border-color 0.35s ease;
+  }
+}
+
+/* --- Enlaces del nav: subrayado que crece al pasar el cursor --- */
+nav a {
+  position: relative;
+  color: #e4e5f4;
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.25s ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  width: 100%;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: #ffffff;
+}
+
+/* --- Botón de tema: transición del fondo al pasar el cursor --- */
+.theme-toggle-btn {
+  transition: background-color 0.2s ease;
+}
+
+/* --- Foto de perfil: leve realce al pasar el cursor --- */
+header img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.03);
+}
+
+/* --- Enlaces de proyectos --- */
+#Proyectos a {
+  transition: color 0.2s ease;
+}
+
+/* --- Campos de formulario: foco con transición suave --- */
+#Contacto input,
+#Contacto textarea {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#Contacto input:focus,
+#Contacto textarea:focus {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+/* --- Botón de envío: hover y efecto de presión --- */
+#Contacto button {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#Contacto button:hover {
+  background: var(--color-accent-dark);
+}
+
+#Contacto button:active {
+  background: var(--color-accent-deep);
+  transform: translateY(1px);
+}
+
+/* --- Punto pulsante: único movimiento no disparado por el usuario --- */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(224, 79, 58, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(224, 79, 58, 0);
+  }
+}

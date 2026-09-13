@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Camilo Ordenes</title>
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- HOJA DE ESTILOS CSS3 -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<header>
+    <img src="assets/images/mifotito.png" alt="Fotografía de Camilo Rafael Ordenes Vargas" width="200" height="200">
+    <div class="header-info">
+        <h1>Camilo Rafael Ordenes Vargas</h1>
+        <p class="header-role">Ingeniero en Sistemas</p>
+        <p class="header-tagline">Aprendiendo hoy para innovar mañana</p>
+        <address>
+            <p>La Paz, Bolivia</p>
+            <p>Teléfono: +591 72028962</p>
+            <p>Email: camiloordenesvargas@gmail.com</p>
+        </address>
+    </div>
+    <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-pressed="false">
+        <span id="theme-icon" aria-hidden="true">☀️</span>
+        <span id="theme-text">Modo Claro</span>
+    </button>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#Perfil">Perfil</a></li>
+        <li><a href="#Formacion">Formación</a></li>
+        <li><a href="#Experiencia">Experiencia</a></li>
+        <li><a href="#Habilidades">Habilidades</a></li>
+        <li><a href="#Cursos">Cursos</a></li>
+        <li><a href="#Idiomas">Idiomas</a></li>
+        <li><a href="#Proyectos">Proyectos</a></li>
+        <li><a href="#Portafolio">Portafolio</a></li>
+        <li><a href="#Contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+
+<main>
+
+<hr>
+
+<section id="Perfil" aria-labelledby="Perfil-title">
+    <h2 id="Perfil-title">Perfil Profesional</h2>
+    <article>
+        <h3>Presentación Personal</h3>
+        <p>
+            Soy estudiante apasionado de la carrera de <strong>Ingeniería de Sistemas</strong> en la
+            Universidad Católica Boliviana. Me caracterizo por afrontar la preparación académica con <mark>esfuerzo</mark> y la determinación de cumplir mis metas.
+        </p>
+        <p>
+            <strong>Principales fortalezas:</strong> Alta capacidad de aprendizaje, <em>trabajo en equipo</em> y orientación a la resolución de problemas técnicos.
+        </p>
+        <p>
+            <strong>Objetivo profesional:</strong> Formar parte de proyectos de desarrollo de software donde pueda aplicar mis conocimientos web y bases de datos.
+        </p>
+    </article>
+</section>
+
+<hr>
+
+<section id="Formacion" aria-labelledby="Formacion-title">
+    <h2 id="Formacion-title">Formación Académica</h2>
+    <article>
+        <h3>Ingeniería de Sistemas</h3>
+        <p>Universidad Católica Boliviana "San Pablo"</p>
+        <p>
+            <time datetime="2024">2024</time> -
+            <time datetime="2026">Actualidad (En curso)</time>
+        </p>
+        <p>Grado obtenido: Estudiante de Licenciatura</p>
+    </article>
+</section>
+
+<hr>
+
+<section id="Experiencia" aria-labelledby="Experiencia-title">
+    <h2 id="Experiencia-title">Experiencia Profesional</h2>
+
+    <article>
+        <h3>Desarrollador Web Junior (Proyecto Académico)</h3>
+        <p><strong>Universidad Católica Boliviana</strong> | <time datetime="2026-08">Agosto 2026</time> – <time datetime="2026-08">Actualidad</time></p>
+        <p><strong>Funciones:</strong> Maquetación e implementación de páginas accesibles con HTML5 nativo.</p>
+        <p><strong>Logros:</strong> Desarrollo de interfaz semántica validada bajo normas de accesibilidad.</p>
+    </article>
+
+    <article>
+        <h3>Asistente de Turismo y Hotelería</h3>
+        <p><strong>Laboratorio UCB</strong> | <time datetime="2024-08">Agosto 2024</time> – <time datetime="2024-11">Noviembre 2024</time></p>
+        <p><strong>Funciones:</strong> Creación de rutas turísticas y afiliación de la empresa de turismo con sucursales de comida.</p>
+        <p><strong>Logros:</strong> Asociación de las sucursales de comida con la empresa logrando un descuento comercial y un aumento en la clientela.</p>
+    </article>
+
+    <article>
+        <h3>Calculadora de Operaciones en Java</h3>
+        <p><strong>Proyecto Académico</strong> | <time datetime="2023-05">Mayo 2023</time></p>
+        <p><strong>Funciones:</strong> Programación de funciones matemáticas básicas por consola.</p>
+        <p><strong>Logro:</strong> Funcionalidad 100% correcta sin errores de código.</p>
+    </article>
+</section>
+
+<hr>
+
+<section id="Habilidades" aria-labelledby="Habilidades-title">
+    <h2 id="Habilidades-title">Habilidades Técnicas</h2>
+
+    <div class="skills-flex">
+        <div class="skill-group">
+            <h3>Lenguajes y Tecnologías</h3>
+            <ul class="meters">
+                <li><span>HTML5</span> <meter value="0.6" min="0" max="1">60%</meter></li>
+                <li><span>Python</span> <meter value="0.75" min="0" max="1">75%</meter></li>
+                <li><span>Java</span> <meter value="0.88" min="0" max="1">88%</meter></li>
+                <li><span>C++</span> <meter value="0.88" min="0" max="1">88%</meter></li>
+                <li><span>SQL</span> <meter value="0.7" min="0" max="1">70%</meter></li>
+            </ul>
+        </div>
+
+        <div class="skill-group">
+            <h3>Herramientas de Desarrollo</h3>
+            <ul class="tags">
+                <li>Visual Studio Code</li>
+                <li>Eclipse IDE</li>
+                <li>DBeaver</li>
+            </ul>
+        </div>
+
+        <div class="skill-group">
+            <h3>Habilidades Profesionales</h3>
+            <ul class="tags tags-accent">
+                <li>Pensamiento lógico</li>
+                <li>Resolución de problemas</li>
+                <li>Trabajo en equipo</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<section id="Cursos" aria-labelledby="Cursos-title">
+    <h2 id="Cursos-title">Certificaciones y Cursos</h2>
+    <ul class="course-list">
+        <li>Certificado como Técnico Medio en Turismo y Hotelería - <time datetime="2024-11">Noviembre 2024</time></li>
+        <li>Curso de Base de Datos - <time datetime="2026-06">Junio 2026</time></li>
+        <li>Curso de Programación en Java - <time datetime="2026-07">Julio 2026</time></li>
+        <li>Curso de Programación en Python - <time datetime="2025-06">Junio 2025</time></li>
+        <li>Seminario de Inteligencia Artificial - <time datetime="2025-04">Abril 2025</time></li>
+    </ul>
+</section>
+
+<hr>
+
+<section id="Idiomas" aria-labelledby="Idiomas-title">
+    <h2 id="Idiomas-title">Idiomas</h2>
+    <table>
+        <caption>Nivel de dominio de idiomas</caption>
+        <thead>
+            <tr>
+                <th scope="col">Idioma</th>
+                <th scope="col">Lectura</th>
+                <th scope="col">Escritura</th>
+                <th scope="col">Conversación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Español</td>
+                <td>Avanzado</td>
+                <td>Avanzado</td>
+                <td>Nativo</td>
+            </tr>
+            <tr>
+                <td>Inglés</td>
+                <td>Intermedio</td>
+                <td>Intermedio</td>
+                <td>Básico</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<hr>
+
+
+<section id="Proyectos" aria-labelledby="Proyectos-title">
+    <h2 id="Proyectos-title">Proyectos Destacados</h2>
+
+    <article>
+        <h3>Juego Battleship (Hundir la Flota)</h3>
+        <p><strong>Descripción:</strong> Desarrollo de un juego de estrategia naval e interacción por consola que permite posicionar barcos y realizar disparos contra un tablero dinámico.</p>
+        <p><strong>Tecnologías utilizadas:</strong> Java, Eclipse IDE, Git.</p>
+        <p><strong>Rol desempeñado:</strong> Desarrollador Principal.</p>
+        <p><strong>Resultado obtenido:</strong> Juego completamente funcional con lógica de matrices sin errores de ejecución.</p>
+        <p><strong>Enlace al repositorio:</strong> <a href="https://github.com/CROV27/Battleship.git" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a></p>
+    </article>
+
+    <article>
+        <h3>Curriculum Vitae Web Accesible</h3>
+        <p><strong>Descripción:</strong> Plataforma web personal para la presentación de perfil académico y profesional siguiendo lineamientos estrictos de accesibilidad web.</p>
+        <p><strong>Tecnologías utilizadas:</strong> HTML5 Nativo, Visual Studio Code, Estándares WAI-ARIA.</p>
+        <p><strong>Rol desempeñado:</strong> Desarrollador Web Frontend.</p>
+        <p><strong>Resultado obtenido:</strong> Sitio web maquetado de forma 100% semántica y validado bajo estándares internacionales.</p>
+        <p><strong>Enlace al proyecto:</strong> <a href="https://github.com/CROV27/Curriculum.git" target="_blank" rel="noopener noreferrer">Ver código en GitHub</a></p>
+    </article>
+</section>
+
+<hr>
+
+
+<section id="Portafolio" aria-labelledby="Portafolio-title">
+    <h2 id="Portafolio-title">Portafolio Multimedia</h2>
+
+    <article>
+        <h3>Demostración Multimedia: Proyecto Battleship y Web</h3>
+        <p>A continuación se presenta el material multimedia del desarrollo y funcionamiento de los proyectos:</p>
+
+
+        <figure>
+            <audio controls>
+                <source src="assets/audio/audioPortafolio.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <figcaption>Audio de presentación con explicación técnica del portafolio.</figcaption>
+        </figure>
+
+
+        <figure>
+            <img src="assets/images/portafiolioPaginaWeb.png" alt="Captura de pantalla de la ejecución del juego Battleship en consola" width="400">
+            <figcaption>Captura de pantalla de la interfaz de desarrollo del proyecto.</figcaption>
+        </figure>
+
+
+        <figure>
+            <video controls width="500">
+                <source src="assets/video/DemostracionVideoBattleship.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            <figcaption>Demostración en video del funcionamiento del juego Battleship en tiempo real.</figcaption>
+        </figure>
+    </article>
+</section>
+
+<hr>
+
+<section id="Contacto" aria-labelledby="Contacto-title">
+    <h2 id="Contacto-title">Contacto</h2>
+    <p>Si deseas ponerte en contacto conmigo para oportunidades académicas o profesionales, por favor completa el siguiente formulario:</p>
+
+    <form action="#" method="post" novalidate>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        <p>
+            <label for="nombre">Nombre completo:</label><br>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ej. Camilo Ordenes">
+            <span id="error-nombre" class="form-error" aria-live="polite"></span>
+        </p>
+        <p>
+            <label for="email">Correo electrónico:</label><br>
+            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+            <span id="error-email" class="form-error" aria-live="polite"></span>
+        </p>
+        <p>
+            <label for="asunto">Asunto:</label><br>
+            <input type="text" id="asunto" name="asunto" required placeholder="Motivo del mensaje">
+            <span id="error-asunto" class="form-error" aria-live="polite"></span>
+        </p>
+        <p>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+            <span id="error-mensaje" class="form-error" aria-live="polite"></span>
+        </p>
+        <p>
+            <button type="submit">Enviar mensaje</button>
+        </p>
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Camilo Rafael Ordenes Vargas. Todos los derechos reservados.</p>
+    <p><small>Sitio web diseñado bajo estándares de accesibilidad HTML5 nativo.</small></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+/* ==========================================================================
+   COMPONENTS.CSS — Componentes reutilizables
+   ========================================================================== */
+
+/* --- Título de sección con marca lateral --- */
+h2 {
+  position: relative;
+  padding-left: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 5px;
+  height: 1.05em;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* --- Callout: objetivo profesional (3er párrafo del Perfil) --- */
+#Perfil article p:nth-of-type(3) {
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-surface);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  max-width: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* --- Estado "en curso" en Formación --- */
+time[datetime="2026"] {
+  position: relative;
+  padding-left: 1.1em;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+time[datetime="2026"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  time[datetime="2026"]::before {
+    animation: pulse-dot 2.4s ease-in-out infinite;
+  }
+}
+
+/* --- Marcador de puesto en Experiencia --- */
+#Experiencia h3 {
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-line);
+  position: relative;
+}
+
+#Experiencia h3::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 0.3em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+/* --- Meters (barras de nivel) --- */
+.meters span {
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+}
+
+meter {
+  width: 100%;
+  height: 10px;
+}
+
+meter::-webkit-meter-bar {
+  background: var(--color-surface-tint);
+  border: none;
+  border-radius: var(--radius-pill);
+  height: 10px;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-pill);
+}
+
+meter::-moz-meter-bar {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: var(--radius-pill);
+}
+
+/* --- Tags (herramientas / habilidades profesionales) --- */
+.tags li {
+  background: var(--color-surface);
+  color: var(--color-primary-deep);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  border: 1px solid var(--color-line);
+}
+
+.tags-accent li {
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent);
+}
+
+/* --- Cursos --- */
+.course-list li {
+  position: relative;
+  padding-left: 1.1em;
+}
+
+.course-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+/* --- Tabla de idiomas --- */
+table {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+caption {
+  text-align: left;
+  font-style: italic;
+  color: var(--color-ink-soft);
+  margin-bottom: var(--space-1);
+  caption-side: top;
+}
+
+thead th {
+  background: var(--color-band);
+  color: #ffffff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border: none;
+}
+
+tbody td {
+  padding: 0.7rem 1rem;
+  border-top: var(--border-hairline);
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background: var(--color-surface-tint);
+}
+
+/* --- Portafolio: audio / imagen / video --- */
+#Portafolio figure {
+  background: var(--color-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+}
+
+#Portafolio figure img,
+#Portafolio figure video {
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+#Portafolio audio,
+#Portafolio video {
+  width: 100%;
+}
+
+#Portafolio figcaption {
+  margin-top: var(--space-1);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--color-ink-soft);
+}
+
+/* --- Formulario de contacto --- */
+#Contacto input,
+#Contacto textarea {
+  width: 100%;
+  padding: 0.7rem 0.2rem;
+  border: none;
+  border-bottom: 2px solid var(--color-line);
+  background: transparent;
+  color: var(--color-ink);
+}
+
+#Contacto input::placeholder,
+#Contacto textarea::placeholder {
+  color: #9a9ab3;
+}
+
+#Contacto textarea {
+  resize: vertical;
+}
+
+#Contacto button {
+  background: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Botón de cambio de tema (fijo sobre la franja oscura del header) --- */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f2f2f7;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* --- Validación de formulario (generada por JavaScript) --- */
+.form-error {
+  display: block;
+  min-height: 1.1em;
+  color: var(--color-accent-dark);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+#Contacto input[aria-invalid="true"],
+#Contacto textarea[aria-invalid="true"] {
+  border-bottom-color: var(--color-accent);
+}
+
+.form-status {
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status--ok {
+  background: var(--color-surface);
+  color: var(--color-primary-dark);
+  border-left: 3px solid var(--color-primary);
+}
+
+.form-status--error {
+  background: var(--color-surface);
+  color: var(--color-accent-dark);
+  border-left: 3px solid var(--color-accent);
+}

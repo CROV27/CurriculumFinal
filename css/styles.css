@@ -1,0 +1,10 @@
+/* ==========================================================================
+   STYLES.CSS — Punto de entrada: importa todos los módulos
+   Este es el único archivo enlazado desde index.html
+   ========================================================================== */
+
+@import url("variables.css");
+@import url("base.css");
+@import url("layouts.css");
+@import url("components.css");
+@import url("animation.css");
