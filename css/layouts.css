@@ -7,6 +7,8 @@ header {
   position: relative;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
   gap: var(--space-4);
   background: var(--color-band);
   background-image:
@@ -22,7 +24,7 @@ header {
       transparent 1px 42px
     );
   color: #f2f2f7;
-  padding: var(--space-5) var(--space-4);
+  padding: 5rem var(--space-2) var(--space-4);
 }
 
 header img {
@@ -89,7 +91,7 @@ main {
 }
 
 section {
-  padding: var(--space-4);
+  padding: var(--space-2);
   margin: var(--space-3) 0;
   border-radius: var(--radius-sm);
   scroll-margin-top: 4.5rem;
@@ -139,16 +141,27 @@ section > article + article {
   border-bottom: none;
 }
 
-/* --- PROYECTOS (CSS Grid) --- */
-#Proyectos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
+/* Grid para las tarjetas; Flexbox para navegación y habilidades. */
+.project-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-3); }
+.project-grid > * { min-width: 0; padding: var(--space-2); background: var(--color-surface); border: var(--border-hairline); border-radius: var(--radius-sm); }
+.project-grid a { overflow-wrap: anywhere; }
+nav ul { flex-direction: column; }
+nav.nav-ready ul { display: none; }
+nav.nav-ready.is-open ul { display: flex; }
+#menu-toggle { margin: var(--space-1) var(--space-2); }
+table { display: block; overflow-x: auto; }
+/* Base móvil: menos de 768px. */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header { flex-direction: row; text-align: left; }
+  section { padding: var(--space-3); }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-
-#Proyectos article:nth-child(2) {
-  border-left: var(--border-hairline);
-  padding-left: var(--space-4);
+@media (min-width: 1025px) {
+  header { flex-direction: row; text-align: left; padding: var(--space-5) var(--space-4); }
+  section { padding: var(--space-4); }
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  nav.nav-ready ul, nav ul { display: flex; flex-direction: row; }
+  #menu-toggle { display: none; }
 }
 
 /* --- PORTAFOLIO --- */
@@ -179,45 +192,3 @@ footer p {
   max-width: none;
 }
 
-/* ==========================================================================
-   RESPONSIVE — Adaptación a dispositivos móviles
-   ========================================================================== */
-@media (max-width: 720px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: var(--space-4) var(--space-2);
-  }
-
-  .header-info address {
-    text-align: center;
-  }
-
-  nav ul {
-    gap: 0.4rem var(--space-2);
-    font-size: 0.9rem;
-  }
-
-  .skills-flex {
-    flex-direction: column;
-    gap: var(--space-3);
-  }
-
-  #Proyectos {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-
-  #Proyectos article:nth-child(2) {
-    border-left: none;
-    padding-left: 0;
-    border-top: var(--border-hairline);
-    padding-top: var(--space-3);
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}

@@ -1,6 +1,6 @@
 # CV — Camilo Rafael Ordenes Vargas
 
-## Etapa: Tema persistente con JSON
+## Etapa: Menú, accesibilidad y diseño adaptable
 
 Avance parcial de SIS-214. Conserva los datos y recursos de la primera parte.
 

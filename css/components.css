@@ -283,3 +283,21 @@ tbody tr:nth-child(even) {
   color: var(--color-accent-dark);
   border-left: 3px solid var(--color-accent);
 }
+
+[hidden] { display: none !important; }
+body { overflow-wrap: break-word; }
+aside { margin-top: var(--space-3); border-left: 3px solid var(--color-primary); padding-left: var(--space-2); }
+#project-search { width: 100%; padding: 0.8rem; background: var(--color-surface); color: var(--color-ink); border: 1px solid var(--color-ink-soft); border-radius: var(--radius-sm); }
+#project-count, #github-status { margin: var(--space-2) 0; }
+#menu-toggle, #github-retry { padding: 0.65rem 1rem; background: var(--color-band); color: white; border: 1px solid #b7b9d6; border-radius: var(--radius-sm); cursor: pointer; }
+button:disabled { opacity: 0.65; cursor: wait; }
+.skip-link { position: absolute; left: 1rem; top: -10rem; z-index: 100; padding: 1rem; background: var(--color-surface); }
+.skip-link:focus { top: 1rem; }
+.form-error[data-valid="true"] { color: var(--color-primary-dark); }
+#Contacto button { background: var(--color-accent-dark); }
+:root[data-theme="dark"] { --color-accent-dark: #ffad9f; --color-accent-deep: #ffad9f; --color-accent-tint: #432720; }
+:root[data-theme="dark"] #Contacto button { color: #292947; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

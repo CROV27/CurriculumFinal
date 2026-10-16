@@ -1,11 +1,4 @@
-/* ==========================================================================
-   ANIMATION.CSS — Transiciones e interactividad
-   El único JavaScript del proyecto vive en js/main.js y solo alterna el
-   atributo data-theme y valida el formulario; todo el MOVIMIENTO sigue
-   siendo CSS puro (transitions y keyframes).
-   ========================================================================== */
-
-/* --- Cambio de tema: transición de color suave, no golpe seco --- */
+/* Transiciones con respeto a movimiento reducido. */
 @media (prefers-reduced-motion: no-preference) {
   body,
   header,
