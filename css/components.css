@@ -105,7 +105,7 @@ meter::-moz-meter-bar {
 /* --- Tags (herramientas / habilidades profesionales) --- */
 .tags li {
   background: var(--color-surface);
-  color: var(--color-primary-deep);
+  color: var(--color-primary-dark);
   padding: 0.4rem 0.9rem;
   border-radius: var(--radius-pill);
   font-size: 0.9rem;
@@ -173,6 +173,61 @@ tbody tr:nth-child(even) {
   background: var(--color-surface-tint);
 }
 
+@media (max-width: 560px) {
+  .language-table {
+    display: block;
+    width: 100%;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .language-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .language-table tbody {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .language-table tbody tr {
+    display: block;
+    overflow: hidden;
+    border: var(--border-hairline);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .language-table tbody tr:nth-child(even) {
+    background: var(--color-surface);
+  }
+
+  .language-table tbody td {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+    padding: 0.65rem 0.8rem;
+    overflow-wrap: break-word;
+  }
+
+  .language-table tbody td::before {
+    content: attr(data-label);
+    color: var(--color-ink-soft);
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
 /* --- Portafolio: audio / imagen / video --- */
 #Portafolio figure {
   background: var(--color-surface);
@@ -212,16 +267,48 @@ tbody tr:nth-child(even) {
 
 #Contacto input::placeholder,
 #Contacto textarea::placeholder {
-  color: #9a9ab3;
+  color: var(--color-ink-soft);
 }
 
 #Contacto textarea {
   resize: vertical;
 }
 
+.contact-location {
+  margin: var(--space-3) 0 var(--space-4);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+}
+
+.contact-location h3 {
+  margin-bottom: var(--space-1);
+}
+
+#contact-map {
+  width: 100%;
+  height: clamp(240px, 42vw, 380px);
+  overflow: hidden;
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-tint);
+  z-index: 0;
+}
+
+.map-status {
+  margin: var(--space-1) 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+}
+
+.map-status[data-state="error"] {
+  color: var(--color-accent-dark);
+}
+
 #Contacto button {
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-accent-ink);
   border: none;
   padding: 0.8rem 1.8rem;
   border-radius: var(--radius-pill);
@@ -234,17 +321,18 @@ tbody tr:nth-child(even) {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.08);
-  color: #f2f2f7;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: var(--color-band);
+  color: #ffffff;
+  border: 1px solid var(--color-band);
   padding: 0.45rem 0.9rem;
   border-radius: var(--radius-pill);
   font-size: 0.85rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .theme-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: var(--color-primary-dark);
 }
 
 /* --- Validación de formulario (generada por JavaScript) --- */
@@ -272,6 +360,12 @@ tbody tr:nth-child(even) {
   display: none;
 }
 
+.form-status--loading {
+  background: var(--color-surface);
+  color: var(--color-ink-soft);
+  border-left: 3px solid var(--color-line);
+}
+
 .form-status--ok {
   background: var(--color-surface);
   color: var(--color-primary-dark);
@@ -289,14 +383,32 @@ body { overflow-wrap: break-word; }
 aside { margin-top: var(--space-3); border-left: 3px solid var(--color-primary); padding-left: var(--space-2); }
 #project-search { width: 100%; padding: 0.8rem; background: var(--color-surface); color: var(--color-ink); border: 1px solid var(--color-ink-soft); border-radius: var(--radius-sm); }
 #project-count, #github-status { margin: var(--space-2) 0; }
-#menu-toggle, #github-retry { padding: 0.65rem 1rem; background: var(--color-band); color: white; border: 1px solid #b7b9d6; border-radius: var(--radius-sm); cursor: pointer; }
+#menu-toggle, #github-retry { padding: 0.65rem 1rem; background: var(--color-band); color: white; border: 1px solid var(--color-primary-dark); border-radius: var(--radius-sm); cursor: pointer; }
 button:disabled { opacity: 0.65; cursor: wait; }
 .skip-link { position: absolute; left: 1rem; top: -10rem; z-index: 100; padding: 1rem; background: var(--color-surface); }
 .skip-link:focus { top: 1rem; }
 .form-error[data-valid="true"] { color: var(--color-primary-dark); }
-#Contacto button { background: var(--color-accent-dark); }
-:root[data-theme="dark"] { --color-accent-dark: #ffad9f; --color-accent-deep: #ffad9f; --color-accent-tint: #432720; }
-:root[data-theme="dark"] #Contacto button { color: #292947; }
+#Contacto button { background: var(--color-accent); }
+#Contacto input,
+#Contacto textarea,
+#Contacto select {
+  border-radius: 8px 8px 0 0;
+}
+#Contacto select {
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+.header-tagline {
+  color: var(--color-ink-soft);
+  font-size: 1.05rem;
+}
+.header-info address a {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }

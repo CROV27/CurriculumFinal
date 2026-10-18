@@ -39,14 +39,16 @@ h3 {
 }
 
 h2 {
-  font-size: 1.7rem;
+  font-size: clamp(1.45rem, 2.3vw, 1.8rem);
   font-weight: 700;
+  letter-spacing: -0.035em;
 }
 
 h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--color-primary-dark);
+  letter-spacing: -0.02em;
 }
 
 p {
@@ -68,6 +70,7 @@ mark {
 a {
   color: var(--color-primary-dark);
   text-decoration: none;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
@@ -91,6 +94,10 @@ hr {
 table {
   border-collapse: collapse;
   width: 100%;
+}
+
+main > hr {
+  display: none;
 }
 
 label {

@@ -19,7 +19,7 @@
 /* --- Enlaces del nav: subrayado que crece al pasar el cursor --- */
 nav a {
   position: relative;
-  color: #e4e5f4;
+  color: #f8fafc;
   font-weight: 500;
   padding-bottom: 0.2rem;
 }
@@ -94,9 +94,9 @@ header img:hover {
 @keyframes pulse-dot {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(224, 79, 58, 0.45);
+    box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.45);
   }
   50% {
-    box-shadow: 0 0 0 5px rgba(224, 79, 58, 0);
+    box-shadow: 0 0 0 5px rgba(201, 162, 39, 0);
   }
 }

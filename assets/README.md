@@ -8,9 +8,9 @@ Esta carpeta contiene todos los archivos multimedia que usa `index.html`: fotogr
 assets/
 ├── images/
 │   ├── mifotito.png              → Fotografía de perfil (header)
-│   └── portafiolioPaginaWeb.png  → Captura del proyecto (sección Portafolio)
+│   └── portafiolioPaginaWeb.png  → Captura de la primera versión del CV (sección Portafolio)
 ├── audio/
-│   └── audioPortafolio.mp3       → Audio de presentación (sección Portafolio)
+│   └── audioPortafolio.mp4       → Audio de presentación (sección Portafolio)
 └── video/
     └── DemostracionVideoBattleship.mp4  → Video de demostración (sección Portafolio)
 ```
@@ -21,7 +21,7 @@ assets/
 |---|---|---|
 | `images/mifotito.png` | `<header>` | `<img src="assets/images/mifotito.png" alt="Fotografía de Camilo Rafael Ordenes Vargas">` |
 | `images/portafiolioPaginaWeb.png` | Sección `#Portafolio` | `<img>` dentro de `<figure>` |
-| `audio/audioPortafolio.mp3` | Sección `#Portafolio` | `<audio controls><source ...></audio>` |
+| `audio/audioPortafolio.mp4` | Sección `#Portafolio` | `<audio controls><source ...></audio>` |
 | `video/DemostracionVideoBattleship.mp4` | Sección `#Portafolio` | `<video controls><source ...></video>` |
 
 

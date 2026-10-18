@@ -37,12 +37,14 @@ Todas las **transiciones e interactividad visual**, sin JavaScript: el subrayado
 
 | Variable | Para qué sirve |
 |---|---|
-| `--color-primary`, `--color-primary-dark`, `--color-primary-deep` | Tonos violeta/índigo (marca principal) |
-| `--color-accent`, `--color-accent-dark`, `--color-accent-deep` | Tonos coral (acento) |
-| `--color-band` | Color fijo del header/nav/footer/tabla — **no cambia** con el tema |
+| `--color-primary`, `--color-primary-dark`, `--color-primary-deep` | Azul principal `#1E3A8A` y tonos de texto legibles por tema |
+| `--color-accent`, `--color-accent-dark`, `--color-accent-deep` | Dorado `#C9A227` y tonos con contraste para texto e interacción |
+| `--color-band` | Azul de nav/footer/tabla: `#1E3A8A` claro y `#16213E` oscuro |
 | `--color-bg`, `--color-surface`, `--color-panel-primary`, `--color-panel-accent` | Fondos, sí cambian entre tema claro y oscuro |
+| `--color-ink` | Texto principal: `#111827` claro y `#F8FAFC` oscuro |
 | `--space-1` a `--space-5` | Escala de espaciados consistente |
-| `--font-display`, `--font-body` | Cinzel (títulos) y Plus Jakarta Sans (cuerpo) |
+| `--font-display`, `--font-body` | Plus Jakarta Sans (títulos y cuerpo) |
+| `--content-max` | Ancho máximo de 1120px para la cabecera y el contenido |
 
 ## Convenciones
 

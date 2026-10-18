@@ -9,11 +9,16 @@ const httpErrors = {
   500: 'EmailJS presenta un error interno (HTTP 500). Inténtalo más tarde.'
 };
 
-// El envío solo se intenta si ya se reemplazaron los valores 'TU_...'.
-const isConfigured = () => Object.values(EMAILJS_CONFIG).every((value) => value && !value.startsWith('TU_'));
+const missingConfiguration = () => Object.entries({
+  'Public Key': EMAILJS_CONFIG.publicKey,
+  'Service ID': EMAILJS_CONFIG.serviceId,
+  'Template ID de Auto-Reply': EMAILJS_CONFIG.autoReplyTemplateId
+})
+  .filter(([, value]) => !value || value.startsWith('TU_'))
+  .map(([name]) => name);
 
 // Petición REST a EmailJS: fetch + async/await + response.ok + timeout.
-async function sendMessage(templateParams) {
+async function sendMessage(templateId, templateParams) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12000);
   try {
@@ -22,7 +27,7 @@ async function sendMessage(templateParams) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         service_id: EMAILJS_CONFIG.serviceId,
-        template_id: EMAILJS_CONFIG.templateId,
+        template_id: templateId,
         user_id: EMAILJS_CONFIG.publicKey,
         template_params: templateParams
       }),
@@ -100,8 +105,9 @@ export function initContact() {
       fields.find((field) => !field.validity.valid).focus();
       return;
     }
-    if (!isConfigured()) {
-      setStatus('error', 'El envío aún no está configurado: completa js/modules/emailjs-config.js con tus credenciales de EmailJS.');
+    const missing = missingConfiguration();
+    if (missing.length) {
+      setStatus('error', `Falta configurar ${missing.join(', ')} en js/modules/emailjs-config.js.`);
       return;
     }
 
@@ -110,18 +116,21 @@ export function initContact() {
     submitButton.textContent = 'Enviando…';
     setStatus('loading', 'Enviando mensaje…');
     try {
-      // Los nombres deben coincidir con las variables {{...}} de la plantilla.
-      await sendMessage({
+      const templateParams = {
+        name: form.elements.nombre.value.trim(),
+        email: form.elements.email.value.trim(),
         from_name: form.elements.nombre.value.trim(),
         from_email: form.elements.email.value.trim(),
         subject: form.elements.asunto.value.trim(),
         message: form.elements.mensaje.value.trim()
-      });
+      };
+      await sendMessage(EMAILJS_CONFIG.autoReplyTemplateId, templateParams);
       resetForm();
-      setStatus('ok', '¡Mensaje enviado correctamente! Te responderé al correo que indicaste.');
+      setStatus('ok', '¡Confirmación enviada a tu correo electrónico!');
     } catch (error) {
-      setStatus('error', error.name === 'AbortError' ? 'El envío tardó demasiado. Vuelve a intentarlo.'
-        : error instanceof TypeError ? 'No se pudo conectar con EmailJS. Revisa tu conexión y vuelve a intentarlo.' : error.message);
+      const detail = error.name === 'AbortError' ? 'El envío tardó demasiado. Vuelve a intentarlo.'
+        : error instanceof TypeError ? 'No se pudo conectar con EmailJS. Revisa tu conexión y vuelve a intentarlo.' : error.message;
+      setStatus('error', detail);
     } finally {
       sending = false;
       submitButton.disabled = false;
